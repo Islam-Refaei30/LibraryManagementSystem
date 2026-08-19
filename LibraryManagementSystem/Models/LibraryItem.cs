@@ -8,9 +8,16 @@ namespace LibraryManagementSystem.Models
 {
     public abstract class LibraryItem
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
         public DateTime AddedDate { get; set; }
+
+        protected LibraryItem(int id, string title)
+        {
+            Id = id;
+            Title = title;
+            AddedDate = DateTime.Now;
+        }
 
         public abstract string GetInfo();
     }
